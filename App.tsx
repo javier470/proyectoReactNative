@@ -19,6 +19,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
 const App = () => {
@@ -30,9 +31,9 @@ const App = () => {
 
           <View style={styles.loginView}>
             <Text style={styles.textLogin}>Usuario</Text>
-            <TextInput placeholder='Usuario...' style={styles.loginInput}></TextInput>
+            <TextInput placeholderTextColor='#fff' placeholder='Usuario...' style={styles.loginInput}></TextInput>
             <Text style={styles.textLogin}>Contraseña</Text>
-            <TextInput placeholder='Contraseña...' style={styles.loginInput}></TextInput>
+            <TextInput placeholderTextColor='#fff' placeholder='Contraseña...' style={styles.loginInput } ></TextInput>
             <TouchableOpacity style={styles.btnLogin}><Text>Login</Text></TouchableOpacity>
           </View>
 
@@ -47,19 +48,22 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#253239',
+    backgroundColor: '#161f28',
   },
   loginView: {
     margin: 7
   },
   textLogin: {
-    color: '#BEDFEA'
+    color: '#fff'
   },
   loginInput: {
-    backgroundColor: '#fff'
+    backgroundColor: '#161f28',
+    borderColor: '#fff',
+    borderWidth: 1,
+    
   },
   btnLogin: {
-    backgroundColor: '#82C586',
+    backgroundColor: '#008f6b',
     borderRadius: 100,
     margin: 20,
     padding: 10,
