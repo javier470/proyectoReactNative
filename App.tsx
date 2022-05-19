@@ -12,104 +12,59 @@ import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
+  TextInput,
   StyleSheet,
   Text,
   useColorScheme,
   View,
+  TouchableOpacity,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section: React.FC<{
-  title: string;
-}> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+      <SafeAreaView style={styles.container}>
+        <ScrollView>
+          <View >
+
+          <View style={styles.loginView}>
+            <Text style={styles.textLogin}>Usuario</Text>
+            <TextInput placeholder='Usuario...' style={styles.loginInput}></TextInput>
+            <Text style={styles.textLogin}>Contraseña</Text>
+            <TextInput placeholder='Contraseña...' style={styles.loginInput}></TextInput>
+            <TouchableOpacity style={styles.btnLogin}><Text>Login</Text></TouchableOpacity>
+          </View>
+
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        </ScrollView>
+        
+      </SafeAreaView>
+        
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    backgroundColor: '#253239',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  loginView: {
+    margin: 7
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  textLogin: {
+    color: '#BEDFEA'
   },
-  highlight: {
-    fontWeight: '700',
+  loginInput: {
+    backgroundColor: '#fff'
   },
+  btnLogin: {
+    backgroundColor: '#82C586',
+    borderRadius: 100,
+    margin: 20,
+    padding: 10,
+    alignItems: 'center',
+  }
 });
 
 export default App;
