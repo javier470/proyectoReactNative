@@ -16,14 +16,14 @@ import {
 
 import Login from './src/screen/login';
 import stylesCont from './src/Style/container';
-import WELCOME from './src/screen/welcome';
+import Welcome from './src/screen/welcome';
 import Register from './src/screen/register';
 
 const App = () => {
   return (
     <SafeAreaView style={stylesCont.container}>
       <ScrollView>
-        <WELCOME />
+        <Welcome />
       </ScrollView>
     </SafeAreaView>
   );

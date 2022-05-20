@@ -6,7 +6,7 @@ import stylesImg from '../Style/image';
 import stylesText from '../Style/text';
 import stylesView from '../Style/view';
 
-const WELCOME = () => {
+const Welcome = () => {
   return (
     <View>
       <View>
@@ -33,4 +33,4 @@ const WELCOME = () => {
   );
 };
 
-export default WELCOME;
+export default Welcome;
