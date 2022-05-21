@@ -23,6 +23,16 @@ const stylesView = StyleSheet.create({
     borderColor: '#fff',
     borderWidth: 1
   },
+
+  viewBackgr: {
+    margin: 5,
+    marginBottom: 8,
+    flex:1
+  },
+
+
 });
+
+
 
 export default stylesView;

@@ -18,6 +18,7 @@ import Login from './src/screen/login';
 import stylesCont from './src/Style/container';
 import Welcome from './src/screen/welcome';
 import Register from './src/screen/register';
+import Backgr from './src/screen/backgr';
 
 const App = () => {
   return (
