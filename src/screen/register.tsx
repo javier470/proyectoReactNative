@@ -1,5 +1,6 @@
-import React from 'react';
-import {TextInput, Text, View, TouchableOpacity, Image} from 'react-native';
+import React, { useState } from 'react';
+import {TextInput, Text, View, TouchableOpacity, Image, Button } from 'react-native';
+
 
 
 
@@ -10,8 +11,12 @@ import stylesView from '../Style/view';
 import stylesInp from '../Style/input';
 import stylesCont from '../Style/container';
 
+
 const Register = () => {
+
+
   return (
+    
     <View style={stylesCont.container}>
       <View style={stylesView.viewImg}>
         <Image
@@ -53,16 +58,17 @@ const Register = () => {
           secureTextEntry
         />
       </View>
-      
+
         <TouchableOpacity style={stylesBtn.btnLogin}>
           <Text style={stylesText.text}>LOGIN</Text>
         </TouchableOpacity>
       
           <View>
-          </View>
-
+          </View>   
     </View>
   );
+  
+
 };
 
 export default Register;
