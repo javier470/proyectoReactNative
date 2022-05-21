@@ -5,6 +5,14 @@ const stylesCont = StyleSheet.create({
         flex: 1,
         backgroundColor: '#161f28',
       },
+
+      
+        containerWel: {
+          position: 'absolute',
+          alignItems: 'center'
+        },
+      
+      
       
 });
 

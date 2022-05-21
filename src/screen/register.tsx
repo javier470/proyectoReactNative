@@ -60,7 +60,7 @@ const Register = () => {
       </View>
 
         <TouchableOpacity style={stylesBtn.btnLogin}>
-          <Text style={stylesText.text}>LOGIN</Text>
+          <Text style={stylesText.text}>Register</Text>
         </TouchableOpacity>
       
           <View>

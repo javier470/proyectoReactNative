@@ -6,6 +6,9 @@
  * https://github.com/react-native-community/react-native-template-typescript
  *
  * @format
+ * 
+ * 
+ * -----------------No hay Navegación todavia-----------------
  */
 
 import React from 'react';
