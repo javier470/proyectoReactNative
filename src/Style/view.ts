@@ -35,8 +35,12 @@ const stylesView = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    alignItems: 'center'
   },
-
+  viewHead:{
+    textAlign: 'center',
+    alignItems: 'center',
+  },
 
 });
 

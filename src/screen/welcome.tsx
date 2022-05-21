@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
+  StyleSheet,
+  Dimensions,
 } from 'react-native';
 
 import stylesBtn from '../Style/button';
@@ -18,11 +20,28 @@ const Welcome = () => {
   return (
     <>
       <Backgr />
-      <SafeAreaView style ={{position: 'absolute'}} >
-        <Text style = {{color: 'white', fontSize: 40,}}>Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Text>
+      <SafeAreaView style={styles.container} >
+        <View style={stylesView.viewHead}>
+          <View>
+            <Image source={require('../img/logo.png')} style={{ width: 150, height: 150 }} />
+          </View>
+          <Text style={{ color: 'white', fontSize: 35, }}>Welcome! Again</Text>
+        </View>
+        <View style={stylesView.viewRegister}>
+          <TouchableOpacity style={stylesBtn.btnWelcome}><Text>Login</Text></TouchableOpacity>
+          <TouchableOpacity style={stylesBtn.btnWelcome}><Text>Register</Text></TouchableOpacity>
+        </View>
       </SafeAreaView>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    alignItems: 'center'
+  },
+
+})
 
 export default Welcome;

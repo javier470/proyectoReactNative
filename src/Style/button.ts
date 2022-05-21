@@ -11,13 +11,13 @@ const stylesBtn = StyleSheet.create({
   },
 
   btnWelcome: {
-    backgroundColor: '#008f6b',
+    backgroundColor: '#1ea07d',
     margin: 20,
     padding: 10,
     alignItems: 'center',
     height: 50,
     width: 200,
-    borderRadius: 5,
+    borderRadius: 100,
   },
 });
 

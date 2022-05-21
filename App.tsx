@@ -24,7 +24,7 @@ const App = () => {
   return (
     <SafeAreaView style={stylesCont.container}>
       <ScrollView>
-        <Register />
+        <Welcome />
       </ScrollView>
     </SafeAreaView>
   );
