@@ -30,6 +30,13 @@ const stylesView = StyleSheet.create({
     flex:1
   },
 
+  viewRegister: {
+    margin: 7,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+
 
 });
 

@@ -12,9 +12,9 @@ const Login = () => {
     <View>
       <View style={stylesView.viewImg}>
         <Image
-          source={{
-            uri: 'https://cdn.pixabay.com/photo/2016/06/15/16/47/auto-1459346_960_720.png',
-          }}
+          source={
+            require('../img/logoNative.png')
+          }
           style={stylesImg.img}
         />
         <Text style={stylesText.textTitle}>WELCOME BACK</Text>
