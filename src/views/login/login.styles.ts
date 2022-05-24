@@ -1,14 +1,18 @@
 import {StyleSheet} from 'react-native';
 
-const stylesText = StyleSheet.create({
-  textLogin: {
-    color: '#fff',
+const stylesLogin = StyleSheet.create({
+  img: {
+    width: 150,
+    height: 150,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 40,
   },
-  text: {
-    fontFamily: 'Inter-VariableFont_slnt,wght',
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#fff',
+  imgIcon: {
+    width: 40,
+    height: 40,
+    marginBottom: 20,
+    marginRight: 10,
   },
   textTitle: {
     fontFamily: 'Inter-VariableFont_slnt,wght',
@@ -34,15 +38,19 @@ const stylesText = StyleSheet.create({
     marginRight: 20,
     marginBottom: 10,
   },
-
-  textWelcome: {
-    fontFamily: 'Inter-VariableFont_slnt,wght',
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: '#fff',
-    textAlign: 'center',
-    margin: 20
+  loginView: {
+    margin: 7,
+  },
+  viewImg: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imgView: {
+    marginEnd: 5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
 });
 
-export default stylesText;
+export default stylesLogin;
