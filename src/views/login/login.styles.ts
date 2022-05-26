@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import Color from '../../res/colors/colors';
+import Size from '../../res/fonts/size/fontSize';
 
 const stylesLogin = StyleSheet.create({
   img: {
@@ -18,22 +20,22 @@ const stylesLogin = StyleSheet.create({
     fontFamily: 'Inter-VariableFont_slnt,wght',
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#fff',
+    color: Color.white,
   },
   textPassword: {
     fontFamily: 'Inter-VariableFont_slnt,wght',
-    fontSize: 14,
+    fontSize: Size.defaultSize,
     fontWeight: 'bold',
-    color: '#fff',
+    color: Color.white,
     textAlign: 'right',
     marginRight: 20,
     marginBottom: 10,
   },
   textOrLogin: {
     fontFamily: 'Inter-VariableFont_slnt,wght',
-    fontSize: 13,
+    fontSize: Size.smallSize,
     fontWeight: 'bold',
-    color: '#fff',
+    color: Color.white,
     textAlign: 'center',
     marginRight: 20,
     marginBottom: 10,

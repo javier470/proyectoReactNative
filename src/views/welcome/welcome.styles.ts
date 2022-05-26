@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import Color from '../../res/colors/colors';
+import Size from '../../res/fonts/size/fontSize';
 
 const stylesWelcome = StyleSheet.create({
     container: {
@@ -17,8 +19,8 @@ const stylesWelcome = StyleSheet.create({
         alignItems: 'center'
     },
     textHead: {
-        color: 'white',
-        fontSize: 35,
+        color: Color.white,
+        fontSize: Size.title1Size,
     },
     imgHead: {
         width: 150,

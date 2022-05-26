@@ -16,6 +16,7 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
+import Color from './src/res/colors/colors';
 
 import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
@@ -23,7 +24,7 @@ import Register from './src/views/register/index';
 
 const App = () => {
   return (
-    <SafeAreaView style={{backgroundColor: '#161f28', flex: 1}}>
+    <SafeAreaView style={{backgroundColor: Color.primary, flex: 1}}>
       <ScrollView>
         <Welcome />
       </ScrollView>

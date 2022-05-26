@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
+import Color from '../../res/colors/colors';
+import Size from '../../res/fonts/size/fontSize';
 
 const stylesBtnF = StyleSheet.create({
     btnLogin: {
-        backgroundColor: '#1CB28A',
+        backgroundColor: Color.secondary,
         margin: 20,
         padding: 10,
         alignItems: 'center',
@@ -11,8 +13,8 @@ const stylesBtnF = StyleSheet.create({
         borderRadius: 100,
     },
     btnText: {
-        color: '#fff',
-        fontSize: 17
+        color: Color.white,
+        fontSize: Size.defaultSize
     }
 });
 

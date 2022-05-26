@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import Color from '../../res/colors/colors';
+import Size from '../../res/fonts/size/fontSize';
 
 const stylesRegister = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#161f28',
     },
     img: {
         width: 150,
@@ -20,15 +21,20 @@ const stylesRegister = StyleSheet.create({
         margin: 7,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        alignItems: 'center'
+        justifyContent: 'center'
     },
     textTitle: {
         fontFamily: 'Inter-VariableFont_slnt,wght',
-        fontSize: 20,
+        fontSize: Size.bigSize,
         fontWeight: 'bold',
-        color: '#fff',
+        color: Color.white,
     },
+    viewDouble: {
+        width: '50%'
+    },
+    viewOne: {
+        width:'70%'
+    }
 });
 
 export default stylesRegister;

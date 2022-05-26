@@ -1,41 +1,18 @@
 import { StyleSheet } from 'react-native'
+import Color from '../../res/colors/colors';
+import Size from '../../res/fonts/size/fontSize';
 
 const stylesInp = StyleSheet.create({
-    loginInput: {
-        backgroundColor: '#161f28',
-        borderBottomWidth: 1,
-        borderBottomColor: '#CC437E',
-        margin: 15,
-        height: 50,
-        borderRadius: 5,
-        color: '#fff',
-        fontSize: 17
-    },
-
     resgisterUs: {
-        backgroundColor: '#161f28',
+        backgroundColor: Color.primary,
         borderBottomWidth: 1,
-        borderBottomColor: '#CC437E',
+        borderBottomColor: Color.pink,
         margin: 15,
         height: 50,
-        width: 150,
         borderRadius: 5,
-        color: '#fff',
-        fontSize: 17
+        color: Color.white,
+        fontSize: Size.defaultSize
     },
-
-    resgisterInput: {
-        backgroundColor: '#161f28',
-        borderBottomWidth: 1,
-        borderBottomColor: '#CC437E',
-        margin: 15,
-        height: 50,
-        width: 350,
-        borderRadius: 5,
-        color: '#fff',
-        fontSize: 17
-    }
-
 });
 
 export default stylesInp;

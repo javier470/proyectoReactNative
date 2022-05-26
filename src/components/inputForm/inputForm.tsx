@@ -1,19 +1,22 @@
 import { TextInput } from 'react-native'
 import stylesInp from './inputForm.style'
 import React from 'react'
+import Color from '../../res/colors/colors'
 
-const InputEmail = () => {
+const InputForm = ({text, type, secure}) => {
+    
     return (
         <TextInput
-            placeholderTextColor="#fff"
-            placeholder="Email..."
+            placeholderTextColor={Color.white}
+            placeholder={text}
             style={stylesInp.resgisterUs}
-            keyboardType={'email-address'}
+            keyboardType={type}
+            secureTextEntry={secure}
         />
     );
 
 
 }
 
-export default InputEmail;
+export default InputForm;
 
