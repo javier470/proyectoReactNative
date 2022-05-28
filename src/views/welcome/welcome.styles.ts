@@ -25,7 +25,7 @@ const stylesWelcome = StyleSheet.create({
     imgHead: {
         width: 150,
         height: 150
-    }
+    },
 });
 
 export default stylesWelcome;

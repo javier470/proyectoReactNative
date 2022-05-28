@@ -3,7 +3,7 @@ import Color from '../../res/colors/colors';
 import Size from '../../res/fonts/size/fontSize';
 
 const stylesBtnF = StyleSheet.create({
-    btnLogin: {
+    btnForm: {
         backgroundColor: Color.secondary,
         margin: 20,
         padding: 10,

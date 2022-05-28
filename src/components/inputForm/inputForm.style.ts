@@ -3,7 +3,7 @@ import Color from '../../res/colors/colors';
 import Size from '../../res/fonts/size/fontSize';
 
 const stylesInp = StyleSheet.create({
-    resgisterUs: {
+    inputContainer: {
         backgroundColor: Color.primary,
         borderBottomWidth: 1,
         borderBottomColor: Color.pink,
