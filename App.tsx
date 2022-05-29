@@ -16,16 +16,15 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
+import style from './src/styles/style';
 
-import Login from './src/screen/login';
-import stylesCont from './src/Style/container';
-import Welcome from './src/screen/welcome';
-import Register from './src/screen/register';
-import Backgr from './src/screen/backgr';
+import Login from './src/views/login/index';
+import Welcome from './src/views/welcome/index';
+import Register from './src/views/register/index';
 
 const App = () => {
   return (
-    <SafeAreaView style={stylesCont.container}>
+    <SafeAreaView style={style.container}>
       <ScrollView>
         <Welcome />
       </ScrollView>
@@ -33,5 +32,5 @@ const App = () => {
   );
 };
 
+
 export default App;
-/**/
