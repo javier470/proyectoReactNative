@@ -7,7 +7,6 @@ import {
   Image,
   SafeAreaView,
   StyleSheet,
-  Dimensions,
   ImageBackground,
 } from 'react-native';
 
@@ -18,11 +17,10 @@ import stylesWelcome from './welcome.styles';
 
 
 const Welcome = ({navigation}: any) => {
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
+
   return (
     <>
-      <ImageBackground style={{ width: windowWidth, height: windowHeight, opacity: 0.5,}} blurRadius={10} source={require('../../res/img/bk.png')} />
+      <ImageBackground style={stylesWelcome.imgBack} blurRadius={10} source={require('../../res/img/bk.png')} />
 
       <SafeAreaView style={stylesWelcome.container} >
         <View style={stylesWelcome.viewHead}>
