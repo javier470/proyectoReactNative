@@ -1,8 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet,Dimensions } from 'react-native';
 import Color from '../../res/colors/colors';
 import Size from '../../res/fonts/size/fontSize';
 
+const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 const stylesWelcome = StyleSheet.create({
+    
     container: {
         position: 'absolute',
         alignItems: 'center'
@@ -25,6 +28,11 @@ const stylesWelcome = StyleSheet.create({
     imgHead: {
         width: 150,
         height: 150
+    },
+    imgBack: {
+        width: windowWidth,
+        height: windowHeight,     
+        opacity: 0.5,
     },
 });
 
