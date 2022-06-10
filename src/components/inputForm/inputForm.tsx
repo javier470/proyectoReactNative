@@ -9,7 +9,7 @@ const InputForm = ({text, type, secure, changed}) => {
         <TextInput
             placeholderTextColor={Color.white}
             placeholder={text}
-            onChange={changed}
+            onChangeText={changed}
             style={stylesInp.inputContainer}
             keyboardType={type}
             secureTextEntry={secure}

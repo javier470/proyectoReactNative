@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TextInput,
   Text,
@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   StyleSheet,
   ImageBackground,
+  AsyncStorage,
 } from 'react-native';
 
 
@@ -16,8 +17,7 @@ import Color from '../../res/colors/colors';
 import stylesWelcome from './welcome.styles';
 
 
-const Welcome = ({navigation}: any) => {
-
+const Welcome = ({ navigation }: any) => {
   return (
     <>
       <ImageBackground style={stylesWelcome.imgBack} blurRadius={10} source={require('../../res/img/bk.png')} />
@@ -30,8 +30,8 @@ const Welcome = ({navigation}: any) => {
           <Text style={stylesWelcome.textHead}>Welcome! Again</Text>
         </View>
         <View style={stylesWelcome.viewRegister}>
-          <ButtonForm text={'Login'} pressed= {()=>navigation.navigate('Login')} />
-          <ButtonForm text={'Register'}pressed= {()=>navigation.navigate('Register')}/>
+          <ButtonForm text={'Login'} pressed={() => navigation.navigate('Login')} />
+          <ButtonForm text={'Register'} pressed={() => navigation.navigate('Register')} />
         </View>
       </SafeAreaView>
     </>

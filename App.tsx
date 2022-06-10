@@ -22,6 +22,7 @@ import style from './src/styles/style';
 import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
 import Register from './src/views/register/index';
+import Body from './src/views/body/index';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Color from './src/res/colors/colors';
@@ -42,7 +43,8 @@ const App = () => {
           <Stack.Navigator screenOptions={{ headerShown: false }} >          
               <Stack.Screen name='Welcome' component={Welcome} />  
               <Stack.Screen name='Login' component={Login} /> 
-              <Stack.Screen name='Register' component={Register} />      
+              <Stack.Screen name='Register' component={Register} /> 
+              <Stack.Screen name='Body' component={Body} />
           </Stack.Navigator>
         </NavigationContainer>
       
