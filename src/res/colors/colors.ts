@@ -1,6 +1,6 @@
 const Color = {
     primary: '#161f28',
-    secondary: '#1CB28A',
+    secondary: '#1CA9B2',
     pink: '#CC437E',
     white: '#fff'
 }

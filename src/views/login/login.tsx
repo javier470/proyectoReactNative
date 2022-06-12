@@ -1,55 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Text, View, Image, Alert } from 'react-native';
 
 import ButtonForm from '../../components/buttonForm/buttonForm';
 import InputForm from '../../components/inputForm/inputForm';
 import stylesLogin from './login.styles';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AuthContext } from '../../state/contexts/context';
 
 
 const Login = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
-  
+  const data = JSON.stringify({ em: email, pass: password, token: 'token' })
 
-  const login = ()=>{
+  const { signIn } = React.useContext(AuthContext)
 
-    return new Promise((resolve, reject)=>{
-      resolve(({id:1, email: 'admin', name: 'admin', pass: '123', token: 'token'}))
-      
-    }).then((value:any)=>{
-      if ((email === '' || email === null || email === undefined) && (password === '' || password === null || password === undefined)) {
-        Alert.alert('Empty params')
-      }else if(email === value.email && password === value.pass){
-        Alert.alert('Login succesfully', `Welcome, ${value.name}`);
-        navigation.navigate('Body')
-      }else if(email != value.email || password != value.pass){
-        Alert.alert('User or password incorrect');
-      }else {
-        Alert.alert('Login error');
-      }
-    })
-    /*const res = db('admin', '123');
-    console.log(res.catch((value)=>{value.email}))
-     else if (email === 'admin' && password === '123') {
-      Alert.alert('Login succesfully')
-      
-    } else {
-      
-    }*/
+
+  const login = (username: any, password: any) => {
+    signIn(username, password);
   }
 
-  useEffect(()=>{
-    
-  },[])
+
 
   return (
     <View>
       <View style={stylesLogin.viewImg}>
         <Image
           source={
-            require('../../res/img/logoNative.png')
+            require('../../res/img/logoNative1.png')
           }
           style={stylesLogin.img}
         />
@@ -63,7 +41,7 @@ const Login = ({ navigation }: any) => {
           <Text style={stylesLogin.textPassword}>Forgot your password?</Text>
 
           <View style={{ alignItems: 'center' }}>
-            <ButtonForm text={'Login'} pressed={() => { login() }} />
+            <ButtonForm text={'Login'} pressed={() => { login(email, password) }} />
           </View>
           <Text style={stylesLogin.textOrLogin}>or login with:</Text>
         </View>
