@@ -5,6 +5,7 @@ import ButtonForm from '../../components/buttonForm/buttonForm';
 import InputForm from '../../components/inputForm/inputForm';
 import stylesLogin from './login.styles';
 import { AuthContext } from '../../state/contexts/context';
+import { initialLoginState, loginReducer } from '../../state/reducers/auth';
 
 
 
@@ -14,10 +15,16 @@ const Login = ({ navigation }: any) => {
 
   const { signIn } = React.useContext(AuthContext)
 
+  const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
-  const login = (username: any, password: any) => {
+  const login = async (username: any, password: any) => {
     signIn(username, password);
-    
+    setTimeout(() => {
+      if (loginState.singedIn === true) {
+        navigation.navigate('Body')
+      }
+    }, 1000)
+
   }
 
 

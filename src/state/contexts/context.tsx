@@ -8,23 +8,27 @@ import { loginReducer, initialLoginState } from "../reducers/auth";
 const AuthContext = React.createContext();
 
 
-const UserProvider = ({ navigation }: any) => {
+const UserProvider = () => {
     const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
     const actions = React.useMemo(() => ({
         signIn: async (userName: any, password: any) => {
             let userToken: any;
             userToken = null
-            if (userName == 'user' && password == '123') {
+            if (userName == 'User' && password == '123') {
                 try {
                     userToken = 'fss'
                     await AsyncStorage.setItem('token', userToken)
+                    loginState.singedIn = true
                     Alert.alert('Logged', `Welcome, ${userName}`)
-                    console.log('logged')
                 } catch (err) {
                     console.log(err)
                 }
+            }else if(userName != 'User' || password != '123'){
+                Alert.alert('Wrong Email or Password');
+                loginState.singedIn = false
             }
             dispatch({ type: 'LOGIN', id: userName, token: userToken })
+            
         },
         signOut: async () => {
             try {

@@ -11,7 +11,7 @@
  * -----------------No hay Navegación todavia-----------------
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -49,7 +49,6 @@ const App = () => {
   const [isToken, setIsToken] = React.useState('');
   const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
-
   useEffect(() => {
     setTimeout(async () => {
       let userToken: any;
@@ -65,17 +64,14 @@ const App = () => {
 
 
   return (
-      <NavigationContainer theme={MyTheme}>
-
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
-          <Stack.Screen name='Welcome' component={Welcome} />
-          <Stack.Screen name='Login' component={Login} />
-          <Stack.Screen name='Register' component={Register} />
-          <Stack.Screen name='Body' component={Body} />
-        </Stack.Navigator>
-
-
-      </NavigationContainer>
+    <NavigationContainer theme={MyTheme} >
+      <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Screen name='Welcome' component={Welcome} />
+        <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Register' component={Register} />
+        <Stack.Screen name='Body' component={Body}/>
+      </Stack.Navigator>
+    </NavigationContainer>
 
 
 
