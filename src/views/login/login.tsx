@@ -4,20 +4,20 @@ import { Text, View, Image, Alert } from 'react-native';
 import ButtonForm from '../../components/buttonForm/buttonForm';
 import InputForm from '../../components/inputForm/inputForm';
 import stylesLogin from './login.styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../../state/contexts/context';
+
 
 
 const Login = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const data = JSON.stringify({ em: email, pass: password, token: 'token' })
 
   const { signIn } = React.useContext(AuthContext)
 
 
   const login = (username: any, password: any) => {
     signIn(username, password);
+    
   }
 
 

@@ -25,11 +25,12 @@ import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
 import Register from './src/views/register/index';
 import Body from './src/views/body/index';
-import { AuthContext } from './src/state/contexts/context';
-import { NavigationContainer, StackActions} from '@react-navigation/native';
+import { AuthContext, UserProvider } from './src/state/contexts/context';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Color from './src/res/colors/colors';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { loginReducer, initialLoginState } from './src/state/reducers/auth';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,79 +47,8 @@ const MyTheme = {
 
 const App = () => {
   const [isToken, setIsToken] = React.useState('');
- 
-
-  const initialLoginState = {
-    isLoading: true,
-    userName: null,
-    userToken: null
-  }
-
-  const loginReducer = (prevState: any, action: any) => {
-    switch (action.type) {
-      case 'RETRIEVE_TOKEN':
-        return {
-          ...prevState,
-          userToken: action.token,
-          isLoading: false
-        }
-
-      case 'LOGIN':
-        return {
-          ...prevState,
-          userName: action.id,
-          userToken: action.token,
-          isLoading: false
-        }
-      case 'LOGOUT':
-        return {
-          ...prevState,
-          userName: null,
-          userToken: null,
-          isLoading: false
-        }
-
-      case 'REGISTER':
-        return {
-          ...prevState,
-          userName: action.id,
-          userToken: action.token,
-          isLoading: false
-        }
-
-    }
-  }
-
   const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
-  const authContext = React.useMemo(() => ({
-    signIn: async (userName: any, password: any) => {
-      let userToken: any;
-      userToken = null
-      if (userName == 'user' && password == '123') {
-        try {
-          userToken = 'fss'
-          setIsToken(userToken)
-          await AsyncStorage.setItem('token', userToken)
-          Alert.alert('Logged', `Welcome, ${userName}`)
-          console.log('logged')
-        } catch (err) {
-          console.log(err)
-        }
-      }
-      dispatch({ type: 'LOGIN', id: userName, token: userToken })
-    },
-    signOut: async () => {
-      try {
-        await AsyncStorage.removeItem('token')
-      } catch (err) {
-        console.log(err)
-      }
-      dispatch({ type: 'LOGOUT' })
-    },
-    signUp: () => {
-    },
-  }), []);
 
   useEffect(() => {
     setTimeout(async () => {
@@ -135,7 +65,6 @@ const App = () => {
 
 
   return (
-    <AuthContext.Provider value={authContext}>
       <NavigationContainer theme={MyTheme}>
 
         <Stack.Navigator screenOptions={{ headerShown: false }} >
@@ -147,7 +76,6 @@ const App = () => {
 
 
       </NavigationContainer>
-    </AuthContext.Provider>
 
 
 
@@ -156,4 +84,5 @@ const App = () => {
 
 
 
-export default App;
+export default () => <UserProvider><App /></UserProvider>;
+export { App }
