@@ -5,19 +5,19 @@ import { App } from '../../../App'
 import { NavigationContext, useNavigation } from "@react-navigation/native";
 import { loginReducer, initialLoginState } from "../reducers/auth";
 
-const AuthContext = React.createContext();
+const AuthContext = React.createContext({});
 
 
 const UserProvider = () => {
     const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
     const actions = React.useMemo(() => ({
-        signIn: async (userName: any, password: any) => {
+        signIn: async (userName: string, password: string) => {
             let userToken: any;
             userToken = null
             if (userName == 'User' && password == '123') {
                 try {
                     userToken = 'fss'
-                    await AsyncStorage.setItem('token', userToken)
+                    loginState.userToken = await AsyncStorage.setItem('token',userToken)
                     loginState.singedIn = true
                     Alert.alert('Logged', `Welcome, ${userName}`)
                 } catch (err) {
@@ -43,7 +43,7 @@ const UserProvider = () => {
     }), []);
 
     return (
-        <AuthContext.Provider value={actions}>
+        <AuthContext.Provider value={[loginState ,actions]}>
             <App />
         </AuthContext.Provider>
     );

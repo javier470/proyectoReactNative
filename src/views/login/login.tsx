@@ -1,41 +1,32 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Text, View, Image, Alert } from 'react-native';
+import React, {useContext, useEffect, useState} from 'react';
+import {Text, View, Image, Alert} from 'react-native';
 
 import ButtonForm from '../../components/buttonForm/buttonForm';
 import InputForm from '../../components/inputForm/inputForm';
 import stylesLogin from './login.styles';
-import { AuthContext } from '../../state/contexts/context';
-import { initialLoginState, loginReducer } from '../../state/reducers/auth';
+import {AuthContext} from '../../state/contexts/context';
+import {initialLoginState, loginReducer} from '../../state/reducers/auth';
 
-
-
-const Login = ({ navigation }: any) => {
+const Login = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { signIn } = React.useContext(AuthContext)
+  const [{userToken}, {signIn}] = React.useContext(AuthContext);
 
-  const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
+  const [loginState, dispatch] = React.useReducer(
+    loginReducer,
+    initialLoginState,
+  );
 
-  const login = async (username: any, password: any) => {
+  const login = async (username: string, password: string) => {
     signIn(username, password);
-    setTimeout(() => {
-      if (loginState.singedIn === true) {
-        navigation.navigate('Body')
-      }
-    }, 1000)
-
-  }
-
-
+  };
 
   return (
     <View>
       <View style={stylesLogin.viewImg}>
         <Image
-          source={
-            require('../../res/img/logoNative1.png')
-          }
+          source={require('../../res/img/logoNative1.png')}
           style={stylesLogin.img}
         />
         <Text style={stylesLogin.textTitle}>Log In</Text>
@@ -43,12 +34,27 @@ const Login = ({ navigation }: any) => {
 
       <View>
         <View style={stylesLogin.loginView}>
-          <InputForm text={'Email...'} type={'email-address'} changed={setEmail} secure={false} />
-          <InputForm text={'Password...'} type={'default'} changed={setPassword} secure={true} />
+          <InputForm
+            text={'Email...'}
+            type={'email-address'}
+            changed={setEmail}
+            secure={false}
+          />
+          <InputForm
+            text={'Password...'}
+            type={'default'}
+            changed={setPassword}
+            secure={true}
+          />
           <Text style={stylesLogin.textPassword}>Forgot your password?</Text>
 
-          <View style={{ alignItems: 'center' }}>
-            <ButtonForm text={'Login'} pressed={() => { login(email, password) }} />
+          <View style={{alignItems: 'center'}}>
+            <ButtonForm
+              text={'Login'}
+              pressed={() => {
+                login(email, password);
+              }}
+            />
           </View>
           <Text style={stylesLogin.textOrLogin}>or login with:</Text>
         </View>
