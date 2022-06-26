@@ -31,7 +31,7 @@ const Welcome = ({ navigation }: any) => {
         </View>
         <View style={stylesWelcome.viewRegister}>
           <ButtonForm text={'Login'} pressed={() => navigation.navigate('Login')} />
-          <ButtonForm text={'Register'} pressed={() => navigation.navigate('Register')} />
+          <ButtonForm text={'Register'} pressed={() => navigation.navigate('phoneNumber')} />
         </View>
       </SafeAreaView>
     </>

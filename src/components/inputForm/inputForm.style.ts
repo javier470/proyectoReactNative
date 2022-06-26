@@ -13,6 +13,7 @@ const stylesInp = StyleSheet.create({
         color: Color.white,
         fontSize: Size.defaultSize
     },
+    
 });
 
 export default stylesInp;
