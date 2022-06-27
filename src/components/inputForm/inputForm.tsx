@@ -3,7 +3,7 @@ import stylesInp from './inputForm.style'
 import React from 'react'
 import Color from '../../res/colors/colors'
 
-const InputForm = ({text, type, secure, changed}) => {
+const InputForm = ({text, type, secure, changed, length}) => {
     
     return (
         <TextInput
@@ -13,6 +13,7 @@ const InputForm = ({text, type, secure, changed}) => {
             style={stylesInp.inputContainer}
             keyboardType={type}
             secureTextEntry={secure}
+            maxLength = {length}
         />
     );
 

@@ -12,7 +12,8 @@ import style from './src/styles/style';
 import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
 import Register from './src/views/register/index';
-import Body from './src/views/body/index';
+import ConfirmCode from './src/views/register/confirCode/confirmCode';
+import Home from './src/views/body/index';
 import {AuthContext, UserProvider} from './src/state/contexts/context';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -41,7 +42,7 @@ const App = () => {
   
 
     setTimeout(async () => {
-
+      //await AsyncStorage.removeItem('token');
       let userToke: any;
       userToke = null;
       try {
@@ -62,10 +63,11 @@ const App = () => {
             <Stack.Screen name="Welcome" component={Welcome} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="Code" component={ConfirmCode} />
           </>
         ) : (
           <>
-            <Stack.Screen name="Body" component={Body} />
+            <Stack.Screen name="Body" component={Home} />
           </>
         )}
       </Stack.Navigator>
