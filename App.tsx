@@ -12,6 +12,7 @@ import style from './src/styles/style';
 import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
 import Register from './src/views/register/index';
+import ConfirmCode from './src/views/register/confirCode/confirmCode';
 import Body from './src/views/body/index';
 import {AuthContext, UserProvider} from './src/state/contexts/context';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
@@ -41,7 +42,7 @@ const App = () => {
   
 
     setTimeout(async () => {
-
+      //await AsyncStorage.removeItem('token');
       let userToke: any;
       userToke = null;
       try {
@@ -62,6 +63,7 @@ const App = () => {
             <Stack.Screen name="Welcome" component={Welcome} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="Code" component={ConfirmCode} />
           </>
         ) : (
           <>

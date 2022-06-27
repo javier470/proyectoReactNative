@@ -10,15 +10,20 @@ import {
   ImageBackground,
   AsyncStorage,
 } from 'react-native';
+import ButtonForm from '../../components/buttonForm/buttonForm';
+import AuthContext from '../../state/contexts/context';
 import style from './body.styles'
 
-
-
 const Body = () => {
+  const [{}, {signOut}] = React.useContext(AuthContext);
+
+
+
   return (
-      <View>
-        <Text style={style.title}>Welcome to our app!</Text>
-      </View>
+    <View>
+      <Text style={style.title}>Welcome to our app!</Text>
+      <ButtonForm text={'logout'} pressed={() => { signOut()}} />
+    </View>
   );
 };
 
