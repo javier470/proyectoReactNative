@@ -1,3 +1,3 @@
-import Body from "./body";
+import Home from "./Home";
 
-export default Body;
+export default Home;

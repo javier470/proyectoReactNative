@@ -13,7 +13,7 @@ import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
 import Register from './src/views/register/index';
 import ConfirmCode from './src/views/register/confirCode/confirmCode';
-import Body from './src/views/body/index';
+import Home from './src/views/body/index';
 import {AuthContext, UserProvider} from './src/state/contexts/context';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -67,7 +67,7 @@ const App = () => {
           </>
         ) : (
           <>
-            <Stack.Screen name="Body" component={Body} />
+            <Stack.Screen name="Body" component={Home} />
           </>
         )}
       </Stack.Navigator>
