@@ -12,19 +12,18 @@ const PhoneNumber = () => {
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
     {label: 'North America', value: 'na', disabled: true},
-      {label: 'United States', value: 'US +1', parent: 'na', icon: () => <Image source={require('../../../res/img/usa.png')} style={stylesPhoneNumber.iconStyle} />},
-      {label: 'Canada', value: 'CA +1', parent: 'na', icon: () => <Image source={require('../../../res/img/ca.png')} style={stylesPhoneNumber.iconStyle} />},
-      {label: 'Mexico', value: 'MX +52', parent: 'na', icon: () => <Image source={require('../../../res/img/banderaMexico.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'United States US +1', value: '1', parent: 'na', icon: () => <Image source={require('../../../res/img/usa.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Mexico MX +52', value: '52', parent: 'na', icon: () => <Image source={require('../../../res/img/banderaMexico.png')} style={stylesPhoneNumber.iconStyle} />},
 
     {label: 'Central America', value: 'ca', disabled: true},
-      {label: 'Guatemala', value: 'GT +502', parent: 'ca', icon: () => <Image source={require('../../../res/img/banderaGuate.png')} style={stylesPhoneNumber.iconStyle} />},
-      {label: 'Honduras', value: 'HN +504', parent: 'ca', icon: () => <Image source={require('../../../res/img/hn.png')} style={stylesPhoneNumber.iconStyle} />},
-      {label: 'Panama', value: 'PA +507', parent: 'ca',icon: () => <Image source={require('../../../res/img/pa.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Guatemala GT +502', value: '502', parent: 'ca', icon: () => <Image source={require('../../../res/img/banderaGuate.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Honduras HN +504', value: '504', parent: 'ca', icon: () => <Image source={require('../../../res/img/hn.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Panama PA +507', value: '507', parent: 'ca',icon: () => <Image source={require('../../../res/img/pa.png')} style={stylesPhoneNumber.iconStyle} />},
 
     {label: 'Europe', value: 'eu', disabled: true},
-      {label: 'Portugal', value: 'PT +351', parent: 'eu', icon: () => <Image source={require('../../../res/img/pg.png')} style={stylesPhoneNumber.iconStyle} />},
-      {label: 'Belgium', value: 'BE +32', parent: 'eu', icon: () => <Image source={require('../../../res/img/bg.png')} style={stylesPhoneNumber.iconStyle} />},
-      {label: 'Slovenia', value: 'Sl +386', parent: 'eu',icon: () => <Image source={require('../../../res/img/sl.jpg')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Portugal PT +351', value: '351', parent: 'eu', icon: () => <Image source={require('../../../res/img/pg.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Belgium BE +32', value: '32', parent: 'eu', icon: () => <Image source={require('../../../res/img/bg.png')} style={stylesPhoneNumber.iconStyle} />},
+      {label: 'Slovenia Sl +386', value: '386', parent: 'eu',icon: () => <Image source={require('../../../res/img/sl.jpg')} style={stylesPhoneNumber.iconStyle} />},
   ]);
 
   useEffect(()=>{

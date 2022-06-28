@@ -11,7 +11,7 @@ import style from './src/styles/style';
 
 import Login from './src/views/login/index';
 import Welcome from './src/views/welcome/index';
-import Body from './src/views/body/index';
+import Body from './src/views/home/index';
 import PhoneNumber from './src/views/register/phoneNumber/index';
 import {AuthContext, UserProvider} from './src/state/contexts/context';
 import {NavigationContainer, StackActions} from '@react-navigation/native';

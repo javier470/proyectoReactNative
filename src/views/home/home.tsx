@@ -10,7 +10,7 @@ import {
   ImageBackground,
   AsyncStorage,
 } from 'react-native';
-import style from './body.styles'
+import style from './home.styles'
 
 
 
