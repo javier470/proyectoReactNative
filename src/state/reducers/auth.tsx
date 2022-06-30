@@ -3,7 +3,6 @@ const initialLoginState = {
     isLoading: true,
     userName: null,
     userToken: null,
-
 }
 
 const loginReducer = (prevState: any, action: any) => {
