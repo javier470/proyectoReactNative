@@ -14,7 +14,7 @@ import ButtonForm from '../../components/buttonForm/buttonForm';
 import AuthContext from '../../state/contexts/context';
 import style from './home.styles'
 
-const Home = () => {
+const Home = ( { navigation }: any) => {
   const [{}, {signOut}] = React.useContext(AuthContext);
 
 
@@ -23,6 +23,7 @@ const Home = () => {
     <View>
       <Text style={style.title}>Welcome to our app!</Text>
       <ButtonForm text={'logout'} pressed={() => { signOut()}} />
+      <ButtonForm text={'Map'} pressed={() => navigation.navigate('Map')} />
     </View>
   );
 };

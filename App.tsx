@@ -15,6 +15,7 @@ import PhoneNumber from './src/views/register/phoneNumber/index';
 import Register from './src/views/register/index';
 import ConfirmCode from './src/views/register/confirmCode/confirmCode';
 import Home from './src/views/home/index';
+import Map from './src/views/map';
 import {AuthContext, UserProvider} from './src/state/contexts/context';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -51,7 +52,7 @@ const App = () => {
       } catch (err) {
         console.log(err);
       }
-      dispatch({type: 'RETRIVE_TOKEN', token: userToke});
+      //dispatch({type: 'RETRIVE_TOKEN', token: userToke});
     }, );
   }, []);
 
@@ -69,6 +70,7 @@ const App = () => {
         ) : (
           <>
             <Stack.Screen name="Body" component={Home} />
+            <Stack.Screen name="Map" component={Map}/>
           </>
         )}
       </Stack.Navigator>
