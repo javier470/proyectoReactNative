@@ -17,18 +17,18 @@ const UserProvider = () => {
             if (userName == 'User' && password == '123') {
                 try {
                     userToken = 'fss'
-                    state.userToken = await AsyncStorage.setItem('token',userToken)
+                    state.userToken = await AsyncStorage.setItem('token', userToken)
                     state.singedIn = true
                     console.log('logged')
                 } catch (err) {
                     console.log(err)
                 }
-            }else if(userName != 'User' || password != '123'){
+            } else if (userName != 'User' || password != '123') {
                 Alert.alert('Wrong Email or Password');
                 state.singedIn = false
             }
             dispatch({ type: 'LOGIN', id: userName, token: userToken })
-            
+
         },
         signOut: async () => {
             try {
@@ -39,16 +39,17 @@ const UserProvider = () => {
             dispatch({ type: 'LOGOUT' })
         },
         confirmCode: (code: number) => {
-            if(code == 1234){
+            if (code == 1234) {
                 console.log('Registered')
-            }else{
+            } else {
                 console.log('Incorrect code')
             }
         },
+        
     }), []);
 
     return (
-        <AuthContext.Provider value={[state ,actions]}>
+        <AuthContext.Provider value={[state, actions]}>
             <App />
         </AuthContext.Provider>
     );
