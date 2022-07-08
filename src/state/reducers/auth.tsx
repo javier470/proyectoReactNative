@@ -5,11 +5,6 @@ const initialLoginState = {
     userToken: null,
 }
 
-const initialDirections ={
-    initAddress: null,
-    destinyAddress: null,
-}
-
 const loginReducer = (prevState: any, action: any) => {
     switch (action.type) {
         case 'RETRIEVE_TOKEN':
@@ -41,14 +36,8 @@ const loginReducer = (prevState: any, action: any) => {
                 userToken: action.token,
                 isLoading: false
             }
-        case 'DRIVE':
-            return{
-                ...prevState,
-                initAddress: action.initA,
-                destinyAddress: action.destinyA
-            }
 
     }
 }
 
-export { initialDirections ,initialLoginState, loginReducer }
+export { initialLoginState, loginReducer }
