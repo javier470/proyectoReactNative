@@ -4,12 +4,17 @@ import Size from '../../res/fonts/size/fontSize';
 
 const stylesInp = StyleSheet.create({
     btn:{
-        backgroundColor: Color.white,
+        backgroundColor: Color.primary,
         padding: 13,
-        borderRadius: 5
+        borderRadius: 5,
+        borderBottomWidth: 1,
+        borderBottomColor: Color.pink,
     },
     btnText:{
-        
+        color: Color.white
+    },
+    datePicker:{
+        backgroundColor: Color.primary
     }
 });
 

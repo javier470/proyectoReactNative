@@ -6,7 +6,7 @@ import DatePicker from 'react-native-date-picker'
 
 
 
-const DatePickerBtn = ({ text }) => {
+const DatePickerBtn = ({ text, title }) => {
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
     const [texts, setText] = useState(date.toLocaleDateString());
@@ -14,7 +14,7 @@ const DatePickerBtn = ({ text }) => {
 
     return (
         <View>
-            <TouchableOpacity onPress={() => setOpen(true)} style={styleDate.btn}><Text>{texts}</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => setOpen(true)} style={styleDate.btn}><Text style={styleDate.btnText}>{texts}</Text></TouchableOpacity>
             <DatePicker
                 modal
                 open={open}
@@ -29,6 +29,8 @@ const DatePickerBtn = ({ text }) => {
                 onCancel={() => {
                     setOpen(false)
                 }}
+                title={title}
+                theme={'dark'}
             />
         </View>
 
