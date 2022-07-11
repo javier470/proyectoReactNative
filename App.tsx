@@ -52,7 +52,7 @@ const App = () => {
       } catch (err) {
         console.log(err);
       }
-      //dispatch({type: 'RETRIVE_TOKEN', token: userToke});
+      dispatch({type: 'RETRIVE_TOKEN', token: userToke});
     }, );
   }, []);
 
