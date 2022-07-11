@@ -23,7 +23,7 @@ import { driveReducer, initialDirections } from '../../state/reducers/driveAuth'
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [{ }, { signOut }] = React.useContext(AuthContext);
   const [seats, setSeats] = React.useState(0)
   const [{ }, { direction }] = React.useContext(DriveContext);
@@ -31,8 +31,12 @@ const Home = () => {
   const [address1, setAddress1] = React.useState({})
   const [address2, setAddress2] = React.useState({})
 
+
+
   const sendAddress = (ad1: any, ad2: any) => {
     direction(ad1, ad2)
+   // console.log(address.initAddress.lat)
+    navigation.navigate('Map')
   }
 
   return (
@@ -57,17 +61,18 @@ const Home = () => {
         <View style={style.seatsContainer}>
           <InputForm text={'Free seats'} changed={setSeats} type={'phone-pad'} secure={false} length={1} />
         </View>
+        
         <View style={style.confirmContainer}>
-          <ButtonForm text={'Continue'} disabled={false} pressed={() => { sendAddress(address1, address2) }} />
+          <ButtonForm text={'Continue'} disabled={false} pressed={() => {sendAddress(address1, address2)}} />
         </View>
       </View>
     </View>
   );
 };
 
-export default () => (
+export default ({navigation}: any) => (
   <DriveProvider >
-    <Home />
+    <Home navigation={navigation}/>
   </DriveProvider>
 );
 export { Home };
